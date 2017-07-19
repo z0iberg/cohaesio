@@ -52,12 +52,13 @@ class RouterHelper {
 				if(array_key_exists(self::$controllerVariable, $routeParams))
 					$urlParams[self::$controllerVariable] = ucfirst(ArrayHelper::getValue($routeParams, self::$controllerVariable));
 				$className = self::$controllersPath . ArrayHelper::getValue($urlParams, self::$controllerVariable) . self::$controllersSuffix;
-//				try {
+				try {
 					$class = new $className($urlParams);
 					echo call_user_func_array([$class, 'action' . ArrayHelper::getValue($urlParams, self::$actionVariable)], self::getUrlParams($routeParams));
-//				} catch ( \Error $e) {
-//					die('Something wrong. Too be continue.');
-//				}
+					return true;
+				} catch ( \Error $e) {
+					die('Something wrong. Too be continue.');
+				}
 			}
 		}
 	}
