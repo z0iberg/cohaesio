@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+    head
+        title Test
+        link(href="/css/style.css", rel="stylesheet")
+        link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+        link(href="/font-awesome-4.7.0/css/font-awesome.css", rel="stylesheet")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    body
+        .container
+            h1.center Kostiuk Evgenii
+                br
+                |   Skype: z0iberg_ya
+            div.row
+                h3.center Page title
+                form.form-horizontal
+                    .form-group
+                        label.col-sm-2.control-label(for='inputEmail3') Email
+                        .col-sm-10
+                            input#inputEmail3.form-control(type='email', placeholder='Email')
+                    .form-group
+                        label.col-sm-2.control-label(for='inputPassword3') Password
+                        .col-sm-10
+                            input#inputPassword3.form-control(type='password', placeholder='Password')
+                    .form-group
+                        .col-sm-offset-2.col-sm-10
+                            .checkbox
+                                label
+                                    input(type='checkbox')
+                                    |  Remember me
+                    .form-group
+                        .col-sm-offset-2.col-sm-10
+                            button.btn.btn-success(type='submit') Sign in

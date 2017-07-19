@@ -1,0 +1,26 @@
+body {
+  background-color: #9C989E;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  background-color: #cffff8;
+  border-radius: 15px;
+  max-width: 960px;
+  margin: 15px auto;
+}
+
+.userList {
+  li {
+    margin-top: 15px;
+    border-bottom: 1px solid #000000;
+    .user-button {
+      a {
+        margin-right: 5px;
+      }
+    }
+  }
+}

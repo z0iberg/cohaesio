@@ -1,0 +1,13 @@
+{
+    "name": "z0iberg/cohaesio-test",
+    "description": "My test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Yevhenii Kostiuk",
+            "email": "pipindoss11@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
