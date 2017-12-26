@@ -22,6 +22,10 @@ class Controller
 	public $layoutPath = __DIR__ . '/../../views/layout/';
 	public $layout = 'main';
 
+    /**
+     * Controller constructor.
+     * @param $urlParams
+     */
 	public function __construct($urlParams)
 	{
 
@@ -37,15 +41,33 @@ class Controller
 	 */
 	public function render($view, $variables = [])
 	{
-		extract($variables);
-
-		ob_start();
-		include_once($this->viewPath . strtolower($this->controller) . '/' . $view . '.php');
-		$content =  ob_get_contents();
-		ob_end_clean();
+        $content = $this->prepareRender($this->viewPath . strtolower($this->controller) . '/' . $view, $variables);
 
 		return $this->layout(compact('content'));
 	}
+
+
+	public function renderPartial($view, $variables = [])
+    {
+        return $this->prepareRender($this->viewPath . '/' . $view, $variables);
+    }
+
+    /**
+     * @param $view
+     * @param array $variables
+     * @return string
+     */
+	public function prepareRender($view, $variables = [])
+    {
+        extract($variables);
+
+        ob_start();
+        include_once($view . '.php');
+        $content =  ob_get_contents();
+        ob_end_clean();
+
+        return $content;
+    }
 
 	/**
 	 * @param array $variables

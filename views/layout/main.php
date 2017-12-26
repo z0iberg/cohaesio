@@ -3,17 +3,13 @@
  * Created by PhpStorm.
  * User: zheka
  * Date: 19.07.17
- * Time: 19:58
- */
-?>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: zheka
- * Date: 19.07.17
  * Time: 14:51
  */
+
+use classes\controllers\Controller;
+
+/* @var $this Controller */
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +24,7 @@
 </head>
 <body>
 <div class="container">
-	<h1 class="center">Kostiuk Evgenii<br> Skype: z0iberg_ya</h1>
+    <?= $this->renderPartial('partials/header') ?>
 	<div class="row">
 		<?= $content ?>
 	</div>

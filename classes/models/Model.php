@@ -72,7 +72,7 @@ class Model
 	public function load($data)
 	{
 		foreach ($data as $key => $datum) {
-			$this->$key = $datum;
+			$this->{ $key } = $datum;
 		}
 	}
 
